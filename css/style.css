@@ -5,3 +5,7 @@ html, body {
 h1 {
   font: 26px Lobster;
 }
+
+h2 {
+  font-size: 18px;
+}
