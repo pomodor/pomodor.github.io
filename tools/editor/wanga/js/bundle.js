@@ -195,11 +195,10 @@ const classifier = bayes()
 document.addEventListener('DOMContentLoaded', () => {
   console.log('WPv3')
   axios.get(PROBABILITIES_FILE).then((res) => {
-    const p = JSON.parse(res.data)
-    classifier.fromJson(p)
+    classifier.fromJson(res.data)
     var title = document.getElementById('title')
       title.addEventListener('keydown', (e) => {
-      if (event.keyCode == 13) {
+      if (e.keyCode == 13) {
         let t = title.value
         console.log(classifier.categorize(t))
         title.value = ''
