@@ -190,19 +190,19 @@ var axios = require('axios')
 
 const PROBABILITIES_FILE = 'https://nobleman.xyz/tools/editor/wanga/js/probabilities.json'
 
+const classifier = bayes()
+
 document.addEventListener('DOMContentLoaded', () => {
   console.log(':)')
   axios.get(PROBABILITIES_FILE).then((res) => {
-    console.dir(res)
-    const p = JSON.parse(res.body)
-    const classifier = bayes()
+    const p = JSON.parse(res.data)
     classifier.fromJson(p)
     let title = document.getElementById('title')
       title.addEventListener('keydown', (e) => {
       if (event.keyCode == 13) {
         t = title.value
-        title.value = ''
         console.log(classifier.categorize(title.value))
+        title.value = ''
       }
     })
   })
