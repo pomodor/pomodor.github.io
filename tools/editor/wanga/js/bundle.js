@@ -190,12 +190,12 @@ var axios = require('axios')
 
 const PROBABILITIES_FILE = 'https://nobleman.xyz/tools/editor/wanga/js/probabilities.json'
 
-const classifier = bayes()
+var classifier
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('WPv6')
+  console.log('WPv7')
   axios.get(PROBABILITIES_FILE).then((res) => {
-    classifier.fromJson(res.data)
+    classifier = bayes.fromJson(res.data)
     console.log(classifier)
     var title = document.getElementById('title')
     console.log(title)
