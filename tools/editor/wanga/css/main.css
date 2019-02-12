@@ -1,0 +1,18 @@
+header {
+  background-image: linear-gradient(to right, blue, black);
+}
+
+.description {
+  color: #99f;
+  text-shadow: 3px 3px 15px #0037ff;
+}
+
+.center {
+  text-align: center;
+}
+
+.jump {
+  margin-top: 20px;
+}
+
+
