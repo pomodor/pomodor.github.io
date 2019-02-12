@@ -188,7 +188,7 @@ process.umask = function() { return 0; };
 var bayes = require('bayes')
 var axios = require('axios')
 
-const PROBABILITIES_FILE = 'http://nobleman.xyz/tools/editor/wanga/js/probabilities.json'
+const PROBABILITIES_FILE = 'https://nobleman.xyz/tools/editor/wanga/js/probabilities.json'
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log(':)')
