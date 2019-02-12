@@ -193,20 +193,17 @@ const PROBABILITIES_FILE = 'https://nobleman.xyz/tools/editor/wanga/js/probabili
 var classifier
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('WPv9')
+  console.log('WP v10 (AI powered edition)')
   axios.get(PROBABILITIES_FILE).then((res) => {
-    console.dir(res)
     classifier = bayes.fromJson(JSON.stringify(res.data))
-    console.log(classifier)
     var title = document.getElementById('title')
-    console.log(title)
+    var results = document.getElementById('results')
     title.addEventListener('keydown', (e) => {
-      console.log(e)
       if (e.keyCode == 13) {
         var t = title.value
-        console.log(t)
-        console.log(classifier.categorize(t))
+        let c = classifier.categorize(t)
         title.value = ''
+        results.innerHTML = '<tr><td>' + t + '</td><td>' + c + '</td></tr>' + results.innerHTML;
       }
     })
   }).catch((err) => {
