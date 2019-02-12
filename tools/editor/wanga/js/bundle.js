@@ -193,13 +193,17 @@ const PROBABILITIES_FILE = 'https://nobleman.xyz/tools/editor/wanga/js/probabili
 const classifier = bayes()
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('WPv4')
+  console.log('WPv5')
   axios.get(PROBABILITIES_FILE).then((res) => {
     classifier.fromJson(res.data)
+    console.log(classifier)
     var title = document.getElementById('title')
-      title.addEventListener('keydown', (e) => {
+    console.log(title)
+    title.addEventListener('keydown', (e) => {
+      console.log(e)
       if (e.keyCode == 13) {
-        let t = title.value
+        var t = title.value
+        console.log(t)
         console.log(classifier.categorize(t))
         title.value = ''
       }
