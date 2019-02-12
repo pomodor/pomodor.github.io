@@ -193,7 +193,7 @@ const PROBABILITIES_FILE = 'https://nobleman.xyz/tools/editor/wanga/js/probabili
 const classifier = bayes()
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('WPv2')
+  console.log('WPv3')
   axios.get(PROBABILITIES_FILE).then((res) => {
     const p = JSON.parse(res.data)
     classifier.fromJson(p)
